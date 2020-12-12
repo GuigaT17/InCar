@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>InCAR</title>
+
+  <style type="text/css">
+      .on  { background:green; }
+      .off { background:red; color: white;}
+     </style>
+
+     <!-- define the toggle function -->
+     <script language="javascript">
+        function toggleState(item){
+           if(item.className == "on") {
+              item.className="off";
+        item.value="off";
+           } else {
+              item.className="on";
+        item.value="on";
+           }
+        }
+     </script>
+
+</head>
+<body>
+  <table class="table">
+    <tr>
+      <th class="table-nav" color:"red"><a href="main.html"><img src="img/home.png" alt="Home" class="nav-img"></a></th>
+
+      <th id="clock-area" colspan="4" rowspan="2">
+	   <div><a href="bluetooth.html"><img id="Bluetooth" src="img/bluetooth.png" alt="Bluetooth" width="50px" height="50px"></a>
+		<a href="wifi.html"><img id="Wifi" src="img/wifi.png" alt="Wifi" width="50px" height="50px"></a></div><div id="clock"></div>
+        <button id="voz-button" onclick="micPress()"><img id="Voz" src="img/voz.png" alt="Voz" width="50px" height="50px"></button>
+		<button id="air-button" onclick="airOn()"><img id="Air" src="img/fan.png" alt="Air" width="50px" height="50px"></button>
+		<p style="font-size:50px">Telemóvel</p>
+        <a href="help.html"><img src="img/help.png" alt="Help" width="50px" height="50px" id="help"></a></th>
+    </tr>
+
+    <tr>
+      <th class="table-nav"><a href="config.html" background-color="red"><img src="img/config.png" alt="Configuracao" class="nav-img"></a></th>
+    </tr>
+    <tr>
+      <th class="table-nav"><a href="music.html"><img src="img/music.png" alt="Music" class="nav-img"></a></th>
+      <th id="conteudo" colspan="4" rowspan="4">
+        <a href="tel.html"><img src="img/voltar.png" height="40" width="40"></a>
+        <img src="img/iphonescreen.png" height="550" width="400">
+      </th>
+    </tr>
+    <tr>
+      <th class="table-nav"><a href="tel.html"><img src="img/tel.jpeg" alt="Call" class="nav-img"></a></th>
+    </tr>
+
+    <tr>
+      <th class="table-nav"><a href="gps.html"><img src="img/gps.png" alt="GPS" class="nav-img"></a></th>
+    </tr>
+
+    <tr>
+      <th class="table-nav"><a href="sos.html"><img src="img/sos.png" alt="SOS" class="nav-img"></a></th>
+    </tr>
+  </table>
+</body>

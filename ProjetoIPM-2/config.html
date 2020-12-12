@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script type="text/javascript" src="main.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>InCAR</title>
+
+  <style type="text/css">
+      .on  { background:green; }
+      .off { background:red; color: white;}
+     </style>
+
+     <!-- define the toggle function -->
+     <script language="javascript">
+        function toggleState(item){
+           if(item.className == "on") {
+              item.className="off";
+        item.value="off";
+           } else {
+              item.className="on";
+        item.value="on";
+           }
+        }
+     </script>
+
+</head>
+<body>
+  <table class="table">
+    <tr>
+      <th class="table-nav" color:"red"><a href="main.html"><img src="img/home.png" alt="Home" class="nav-img"></a></th>
+
+      <th id="clock-area" colspan="4" rowspan="2">
+	   <div><a href="bluetooth.html"><img id="Bluetooth" src="img/bluetooth.png" alt="Bluetooth" width="50px" height="50px"></a>
+		<a href="wifi.html"><img id="Wifi" src="img/wifi.png" alt="Wifi" width="50px" height="50px"></a></div><div id="clock"></div>
+        <button id="voz-button" onclick="micPress()"><img id="Voz" src="img/voz.png" alt="Voz" width="50px" height="50px"></button>
+		<button id="air-button" onclick="airOn()"><img id="Air" src="img/fan.png" alt="Air" width="50px" height="50px"></button>
+		<p style="font-size:50px">Configurações</p>
+        <a href="help.html"><img src="img/help.png" alt="Help" width="50px" height="50px" id="help"></a></th>
+    </tr>
+
+    <tr>
+      <th class="table-nav"><a href="config.html" background-color="red"><img src="img/config.png" alt="Configuracao" class="nav-img"></a></th>
+    </tr>
+    <tr>
+      <th class="table-nav"><a href="music.html"><img src="img/music.png" alt="Music" class="nav-img"></a></th>
+      <th id="conteudo" colspan="4" rowspan="4">
+
+        <p>Idioma  <select>
+                    <option value="portugues-br">Portuguese(BR)</option>
+                    <option value="portugues-pt">Portuguese(PT)</option>
+                    <option value="ingles">English</option>
+                    <option value="frances">French</option>
+                    <option value="espanhol">Spanish</option>
+                  </select> </p>
+        <p>Dia:<select>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="5">6</option>
+                          <option value="5">7</option>
+                          <option value="5">8</option>
+                          <option value="5">9</option>
+                          <option value="5">10</option>
+                          <option value="5">11</option>
+                          <option value="5">12</option>
+                          <option value="5">13</option>
+                          <option value="5">14</option>
+                          <option value="5">15</option>
+                          <option value="5">16</option>
+                          <option value="5">17</option>
+                          <option value="5">18</option>
+                          <option value="5">19</option>
+                          <option value="5">20</option>
+                          <option value="5">21</option>
+                          <option value="5">22</option>
+                          <option value="5">23</option>
+                          <option value="5">24</option>
+                          <option value="5">25</option>
+                          <option value="5">26</option>
+                          <option value="5">27</option>
+                          <option value="5">28</option>
+                          <option value="5">29</option>
+                          <option value="5">30</option>
+                          <option value="5">31</option>
+                        </select>
+          Mês: <select>
+                  <option value="1">Janeiro</option>
+                  <option value="2">Fevereiro</option>
+                  <option value="3">Marco</option>
+                  <option value="4">Abril</option>
+                  <option value="5">Maio</option>
+                  <option value="6">Junho</option>
+                  <option value="7">Julho</option>
+                  <option value="8">Agosto</option>
+                  <option value="9">Setembro</option>
+                  <option value="10">Outubro</option>
+                  <option value="11">Novembro</option>
+                  <option value="12">Dezembro</option>
+                </select>
+              Ano: <select>
+                      <option value="1">2019</option>
+                      <option value="2">2020</option>
+                      <option value="3">2021</option>
+                      <option value="4">2022</option>
+                      <option value="5">2023</option>
+                      <option value="6">2024</option>
+                      <option value="7">2025</option>
+                      <option value="8">2026</option>
+                      <option value="9">2027</option>
+                      <option value="10">2028</option>
+                      <option value="11">2029</option>
+                      <option value="12">2030</option>
+                    </select></p>
+        <p>Horas: <select>
+                          <option value="1">00</option>
+                          <option value="1">01</option>
+                          <option value="2">02</option>
+                          <option value="3">03</option>
+                          <option value="4">04</option>
+                          <option value="5">05</option>
+                          <option value="5">06</option>
+                          <option value="5">07</option>
+                          <option value="5">08</option>
+                          <option value="5">09</option>
+                          <option value="5">10</option>
+                          <option value="5">11</option>
+                          <option value="5">12</option>
+                          <option value="5">13</option>
+                          <option value="5">14</option>
+                          <option value="5">15</option>
+                          <option value="5">16</option>
+                          <option value="5">17</option>
+                          <option value="5">18</option>
+                          <option value="5">19</option>
+                          <option value="5">20</option>
+                          <option value="5">21</option>
+                          <option value="5">22</option>
+                          <option value="5">23</option>
+                        </select>
+                      Minutos:<select>
+                        <option value="1">00</option>
+                                        <option value="1">01</option>
+                                        <option value="2">02</option>
+                                        <option value="3">03</option>
+                                        <option value="4">04</option>
+                                        <option value="5">05</option>
+                                        <option value="5">06</option>
+                                        <option value="5">07</option>
+                                        <option value="5">08</option>
+                                        <option value="5">09</option>
+                                        <option value="5">10</option>
+                                        <option value="5">11</option>
+                                        <option value="5">12</option>
+                                        <option value="5">13</option>
+                                        <option value="5">14</option>
+                                        <option value="5">15</option>
+                                        <option value="5">16</option>
+                                        <option value="5">17</option>
+                                        <option value="5">18</option>
+                                        <option value="5">19</option>
+                                        <option value="5">20</option>
+                                        <option value="5">21</option>
+                                        <option value="5">22</option>
+                                        <option value="5">23</option>
+                                        <option value="5">24</option>
+                                        <option value="5">25</option>
+                                        <option value="5">26</option>
+                                        <option value="5">27</option>
+                                        <option value="5">28</option>
+                                        <option value="5">29</option>
+                                        <option value="5">30</option>
+                                        <option value="5">31</option>
+                                        <option value="5">32</option>
+                                        <option value="5">33</option>
+                                        <option value="5">34</option>
+                                        <option value="5">35</option>
+                                        <option value="5">36</option>
+                                        <option value="5">37</option>
+                                        <option value="5">38</option>
+                                        <option value="5">39</option>
+                                        <option value="5">40</option>
+                                        <option value="5">41</option>
+                                        <option value="5">42</option>
+                                        <option value="5">43</option>
+                                        <option value="5">44</option>
+                                        <option value="5">45</option>
+                                        <option value="5">46</option>
+                                        <option value="5">47</option>
+                                        <option value="5">48</option>
+                                        <option value="5">49</option>
+                                        <option value="5">50</option>
+                                        <option value="5">51</option>
+                                        <option value="5">52</option>
+                                        <option value="5">53</option>
+                                        <option value="5">54</option>
+                                        <option value="5">55</option>
+                                        <option value="5">56</option>
+                                        <option value="5">57</option>
+                                        <option value="5">58</option>
+                                        <option value="5">59</option>
+                                      </select> </p>
+        <p>Luminosidade  <select>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select></p>
+		<button type="button" name="button">Confirmar</button> <button type="button" name="button">Cancelar</button>
+        <p>Modo Corrida <input type="button"  value="off" class="off" onclick="toggleState(this)" /></p>
+        <p>Modo Passivo <input type="button"  value="off" class="off" onclick="toggleState(this)" /></p>
+      </th>
+    </tr>
+    <tr>
+      <th class="table-nav"><a href="tel.html"><img src="img/tel.jpeg" alt="Call" class="nav-img"></a></th>
+    </tr>
+
+    <tr>
+      <th class="table-nav"><a href="gps.html"><img src="img/gps.png" alt="GPS" class="nav-img"></a></th>
+    </tr>
+
+    <tr>
+      <th class="table-nav"><a href="sos.html"><img src="img/sos.png" alt="SOS" class="nav-img"></a></th>
+    </tr>
+  </table>
+</body>
